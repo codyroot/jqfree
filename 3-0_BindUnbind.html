@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Bind und Unbind</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Bind und Unbind</h1>
+<div>Klick mich!</div>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+
+<script src="lib/jquery.js"></script>
+<script>
+// jquery
+var fn = function(){alert("Yo!")},
+    div = $("div");
+    
+    // Bind
+    div.click(fn);
+    div.bind("click", fn);
+    div.on("click", fn);
+
+    // Unbind
+    div.off(); // oder unbind
+    div.off("click");
+    dov.off("click.namespace");
+    div.off("click", fn);
+
+// Nativ
+     var d = document.querySelector("div"),
+         b = document.querySelectorAll("button");
+
+    // Bind
+    d.addEventListener("click", fn, false);
+    [].forEach.call(b, function(el){
+        el.addEventListener("click", fn, false);
+    });
+
+    // Unbind
+    d.removeEventListener("click", fn, false);
+</script>
+</body>
+</html>

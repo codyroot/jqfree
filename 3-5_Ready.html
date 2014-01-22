@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>DOM Ready</title>
+    <link rel="stylesheet" href="lib/style.css" />
+    <script src="lib/jquery.js"></script>
+    <script>
+        // jQuery 1
+        $(document).ready(function(){
+            console.log("jQ DOM Ready 1");
+        });
+        
+        // jQuery 2
+        $(function(){
+            console.log("jQ DOM Ready 2");
+        });
+        
+        // Nativ 1
+        window.addEventListener("load", function(){
+            console.log("JS DOM Ready 3 --> LOAD");
+        });
+        
+        // Nativ 2
+        window.addEventListener("DOMContentLoaded", function(){
+            console.log("JS DOM Ready 4 --> DOMCONTENT");
+        });
+    </script>
+</head>
+<body>
+<h1>DOM Ready</h1>
+
+</body>
+</html>

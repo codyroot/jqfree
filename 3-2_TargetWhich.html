@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Document Objekt</h1>
+<div>
+    <input type="text">
+</div>
+
+<script src="lib/jquery.js"></script>
+<script>
+$("input").on("keypress", function(e){
+    console.log(e.target);
+    console.log(e.which); // keycode
+});
+document.querySelector("input").addEventListener("keydown", function(e){
+    console.log(e.target);
+    console.log(e.which); // keycode
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Klassen</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Klassen</h1>
+<div class="aktiv warn help"></div>
+<p class="aktiv warn help"></p>
+<script src="lib/jquery.js"></script>
+<script>
+//jquery
+var div = $("div");
+div.addClass("reaktiv");
+div.removeClass("aktiv");
+div.toggleClass("warn");
+div.hasClass("help");
+
+// Nativ 1
+var p = document.querySelector("p");
+p.className += "reaktiv";
+p.className = "";
+
+// Nativ 2
+p.classList.add("reaktiv");
+p.classList.remove("aktiv");
+p.classList.toggle("warn");
+p.classList.contains("help");
+
+
+</script>
+</body>
+</html>

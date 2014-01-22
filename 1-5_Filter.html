@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Filter</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Filter</h1>
+<div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+
+<script src="lib/jquery.js"></script>
+<script>
+//jQuery
+var el = $("li").filter(":even");
+$( "li" )
+  .filter(function( index ) {
+    return index === 2;
+  }).css( "background-color", "red" );
+
+// Nativ
+var nodes = [].slice.call(document.querySelectorAll("li"));
+
+var n1 = nodes.filter(function(el){
+    return el.webkitMatchesSelector("li:nth-child(2n)");
+}).forEach(function(el){
+    el.style.backgroundColor = "skyblue";
+});
+
+
+</script>
+</body>
+</html>

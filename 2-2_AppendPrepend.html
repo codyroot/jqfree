@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Append and Prepend</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Append and Prepend</h1>
+<div>
+    <p>Text ...</p>
+</div>
+
+<section>
+    <p>Text...</p>
+</section>
+
+<main>
+    <text>Text</text>
+</main>
+
+<script src="lib/jquery.js"></script>
+<script>
+//jQuery
+var div = $("div");
+div.prepend("<h2>Prepend</h2>");
+div.append("<h2>Append</h2>");
+
+// Nativ 1
+var sec = document.querySelector("section");
+pH2 = document.createElement("h2");
+pH2.innerText = "InsertBefore";
+sec.insertBefore(pH2);
+
+aH2 = document.createElement("h2");
+aH2.innerText = "AppendChild";
+sec.appendChild(aH2);
+
+// Nativ 2
+var m = document.querySelector("main");
+m.insertAdjacentHTML("afterbegin", "<h2>Afterbegin</h2>");
+m.insertAdjacentHTML("beforeend", "<h2>Beforeend</h2>");
+</script>
+</body>
+</html>

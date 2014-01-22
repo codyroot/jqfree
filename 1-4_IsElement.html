@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>IS</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>IS</h1>
+<div>1</div>
+<div>2</div>
+<div class="select">3</div>
+<div>4</div>
+
+<script src="lib/jquery.js"></script>
+<script>
+    //jQuery
+    var is = $("div").is(".select");
+    
+    // Nativ
+    var isNativ = document.querySelectorAll("div");
+    [].filter.call(isNativ, function(el){
+       return el.webkitMatchesSelector(".select");
+    }).forEach(function(el){
+        el.style.color = "purple";
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Document Objekt</h1>
+<input type="text" />
+
+<script src="lib/jquery.js"></script>
+<script>
+// jQuery
+var inp = $("inp");
+inp.val("Wert"); //Setter
+inp.val(); // Getter
+
+// Nativ
+var i = document.querySelector("input");
+i.value = "Wert pur"; // Setter;
+i.value; // Getter
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>JSONP</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>JSONP</h1>
+
+
+<script src="lib/jquery.js"></script>
+<script>
+//var url = "http://jsfiddle.net/echo/jsonp";
+// jQuery 1
+//$.ajax({
+//    url: url2,
+//    dataType: "jsonp",
+//    success: function(data) {
+//        console.log(data);
+//    }
+//});
+
+// jQuery 2
+//$.getJSON(url + "?callback=?", function(data){
+//    console.log(data);
+//});
+
+// Nativ
+var url2 = "http://webservice.helmutkarger.de/php/jsonp.php?time=1351678219999&callback=callbackFn";
+
+// Callback Parameter muss den gleichen Namen haben wie die Funktion
+var script = document.createElement("script");
+script.src = url2;
+document.head.appendChild(script);
+
+function callbackFn (data) {
+    console.log(data);
+};
+
+</script>
+</body>
+</html>

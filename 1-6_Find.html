@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Find</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Find</h1>
+<ul>
+    <li></li>
+    <li>
+        <span>span...</span>
+    </li>
+    <li class="findMe"></li>
+    <li>
+        <span>span...</span><span>span...3</span>
+    </li>
+    <li class="findMe"></li>
+</ul>
+
+<script src="lib/jquery.js"></script>
+<script>
+//jquery
+var j = $("ul").find(".findMe").text("Gefunden per jQ");
+
+// Nativ
+var el = document.querySelector("ul").querySelectorAll(".findMe");
+console.log(el);
+
+var lis = document.querySelectorAll("li"),
+    liArray = [];
+[].forEach.call(lis, function(el){
+    liArray = liArray.concat([].slice.call(el.querySelectorAll("span")));
+});
+console.log(liArray);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML und Text</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>HTML und Text</h1>
+<div></div>
+<p></p>
+
+<script src="lib/jquery.js"></script>
+<script>
+// jQuery
+var div = $("div");
+div.html("<b>B!</b>"); // Setter
+div.html(); // Getter
+div.text("TXT"); // Setter
+div.text(); // Getter
+
+// Nativ
+var p = document.querySelector("p");
+p.innerHTML = "<i>Kursiv</i>"; // Setter
+p.innerHTML; // Getter
+p.innerText = "TXT"; // Setter
+p.innerText; // Getter
+</script>
+</body>
+</html>

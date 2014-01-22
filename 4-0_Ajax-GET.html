@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax GET</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Ajax GET</h1>
+
+<script src="lib/jquery.js"></script>
+<script>
+// jQuery 1
+$.get("/lib/data.json", function(data){
+    console.log(data);
+    alert("a");
+});
+
+// jQuery 2
+$.ajax({
+    type: "GET",
+    url: "/lib/data.json",
+    dataType: "json",
+    success: function(data) {
+        console.log(data);
+    },
+    error: function(xhr, textStatus, errorThrown) {
+        console.log( errorThrown ? errorThrown : xhr.status );
+    }
+});
+
+// Nativ
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "/lib/data.json", true);
+xhr.onreadystatechange = function(){
+    if (this.status === 200 && xhr.readyState === 4) {
+        console.log(this.responseText);
+    }
+};
+xhr.send();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="lib/style.css" />
+    <title>Ajax POST</title>
+</head>
+<body>
+<h1>Ajax POST</h1>
+
+<script src="lib/jquery.js"></script>
+<script>
+var url = "http://fiddle.jshell.net/echo/json/?category=books";
+// jQuery 1
+//$.post("/lib/data.json", function(data){
+//    console.log(data);
+//});
+//
+//// jQuery 2
+//$.post({
+//    type: "POST",
+//    url: url,
+//    dataType: "json",
+//    success: function(data) {
+//        console.log(data);
+//    },
+//    error: function(xhr, textStatus, errorThrown) {
+//        console.log( errorThrown ? errorThrown : xhr.status );
+//    }
+//});
+
+// Nativ 1
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.onreadystatechange = function(){
+    if (this.status === 200 && xhr.readyState === 4) {
+        console.log(this.responseText);
+    }
+};
+xhr.send();
+
+// Nativ 2
+var formData = new FormData();
+formData.append("json", "namen");
+formData.append("sort", "asc");
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.onreadystatechange = function(){
+    if (this.status === 200 && xhr.readyState === 4) {
+        console.log(this.responseText);
+    }
+};
+xhr.send(formData);
+</script>
+</body>
+</html>

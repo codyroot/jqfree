@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Type Check</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Type Check</h1>
+
+
+<script src="lib/jquery.js"></script>
+<script>
+var array = [];
+var fn = function(){};
+var num = 10;
+
+// jQuery
+$.type(array); // array
+$.isArray(array); // true
+
+$.type(fn); // function
+$.isFunction(fn) // true
+
+$.type(num); // number
+$.isNumeric(num); // true
+
+// Nativ
+Object.prototype.toString.call(array); // Array
+Array.isArray(array); // true
+
+Object.prototype.toString.call(fn); // Function
+
+Object.prototype.toString.call(num); // Number
+</script>
+</body>
+</html>

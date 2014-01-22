@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>First and Last</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>First and Last</h1>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<script src="lib/jquery.js"></script>
+<script>
+//jQuery
+var div = $("div");
+    
+    // first
+    div.first();
+    div.eq(0);
+    div.get(0);
+    div[0];
+    
+    //last
+    div.last();
+    div.eq(-1);
+    div.get(-1);
+    div[div.length - 1];
+
+// Nativ
+var d = document.querySelectorAll("div");
+    // first
+    d[0];
+    document.querySelector("div");
+
+    // last
+    d[dates.length - 1];
+    [].pop.call(d);
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Each, Grep & Map</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Each, Grep & Map</h1>
+
+<script src="lib/jquery.js"></script>
+<script>
+var languages = [];
+languages[0] = {
+    id : "TypeScript",
+    date: 2012,
+    by: "Anders Hejlsberg"
+};
+languages[1] = {
+    id : "CoffeeScript",
+    date: 2009,
+    by: "Jeremy Ashkenas"
+};
+languages[2] = {
+    id : "JavaScript",
+    date: 1995,
+    by: "Brandan Eich"
+};
+
+// jQuery Each
+$.each(languages, function(index, lang){
+    console.log(lang.id + ": " + lang.by);
+});
+
+// jQuery Grep
+var grep = $.grep(languages, function(lang){
+    return lang.date < 2010;
+});
+console.log(grep);
+
+// jQuery Map
+var map = $.map(languages, function(lang){
+    return {
+        name: lang.id,
+        age: new Date().getFullYear() - lang.date
+    };
+});
+console.log(map);
+console.log("----- Nativ -----");
+
+// Nativ Each
+languages.forEach(function(lang){
+    console.log(lang.id + ": " + lang.by);
+});
+
+// Nativ Grep
+var grepNativ = languages.filter(function(lang){
+    return lang.date < 2010;
+});
+console.log(grepNativ);
+
+// Nativ Map
+var mapNativ = languages.map(function(lang){
+    return {
+        name: lang.id,
+        age: new Date().getFullYear() - lang.date
+    };
+});
+console.log(mapNativ);
+
+</script>
+</body>
+</html>

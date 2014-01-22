@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Data</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Data</h1>
+<div data-name="Bud" data-setup='{"color":"red", "background": "blue"}'></div>
+<script src="lib/jquery.js"></script>
+<script>
+//jQuery 1
+$("div").attr("data-name"); // String
+$("div").data("name"); // String
+$("div").attr("data-setup"); // String
+$("div").data("options"); // Objekt
+
+//jQuery 2
+$("div").data("person", {
+    name:"Spencer"
+});
+$("div").data("person"); // Objekt
+
+// Nativ 1
+var div = document.querySelector("div"),
+    user = '{name: "James", job: "Agent"}';
+div.getAttribute("data-name"); // String
+div.setAttribute("data-name", "Buddy");
+div.setAttribute("data-contact", JSON.stringify(user));
+user = JSON.parse(div.getAttribute("data-user"));
+
+// Nativ 2
+var car = '{"brand" : "BMW", "type" : "320i"}';
+div.dataset.car = car;
+div.dataset.car = JSON.stringify(car);
+car = JSON.parse(car);
+
+console.log(car);
+console.log(JSON.stringify(car));
+</script>
+</body>
+</html>

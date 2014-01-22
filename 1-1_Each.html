@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Each</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Each</h1>
+    <h2>jquery</h2>
+    <div class="d"></div>
+    <div class="d"></div>
+    <div class="d"></div>
+    <div class="d"></div>
+
+    <h2>Native 1</h2>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+
+    <h2>Native 2</h2>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+
+    <h2>Native 3</h2>
+    <div class="dd"></div>
+    <div class="dd"></div>
+    <div class="dd"></div>
+    <div class="dd"></div>
+
+<script src="lib/jquery.js"></script>
+<script>
+    //jquery
+    $(".d").each(function(index, element){
+        $(element).text("Index: " + index);
+    });
+    
+    // Native 1
+    var nodes = document.querySelectorAll("section"),
+        i;
+    for(i = 0, len = nodes.length; i < len; i++) {
+        nodes[i].innerText = "Index: " + i;
+    };
+    
+    // Native 2
+    var nodes2 =  document.querySelectorAll(".div"),
+        el = Array.prototype.slice.call(nodes2);
+    el.forEach(function(element, index){
+        element.innerHTML = "Index: " + index;
+    });
+    
+    // Native 3
+    var nodes3 =  document.querySelectorAll(".dd");
+    [].forEach.call(nodes3,function(element, index){
+        element.innerHTML = "Index: " + index;
+    });
+</script>
+</body>
+</html>

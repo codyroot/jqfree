@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Attribute</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Attribute</h1>
+<a
+    data-color="red"
+    contenteditable="true"
+    href="lib/jquery.js">
+    Link
+</a>
+
+<script src="lib/jquery.js"></script>
+<script>
+// jQuery
+var a = $("a");
+a.attr("gref");
+a.pop("contenteditable", true);
+
+// Nativ
+var aa = document.querySelector("a");
+a.getAttribute("href");
+a.setAttribute("data-color", "blue");
+a.contenteditable = false;
+a.dataset.color;
+</script>
+</body>
+</html>

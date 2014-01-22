@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Document Objekt</h1>
+<header></header>
+<div id="id"></div>
+<section></section>
+<script src="lib/jquery.js"></script>
+<script>
+//jquery
+var el = $("#widget"),
+    prev = el.prev(),
+    next = el.next();
+    
+//Nativ
+var elm = document.getElementById("id");
+elm.nextElementSibling();
+elm.previousElementSibling();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Remove</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Remove</h1>
+<div>Remove me!!!</div>
+<section>Remove me pur!!!</section>
+
+
+<script src="lib/jquery.js"></script>
+<script>
+//jQuery
+var div = $("div");
+div.empty();
+div.html("");
+div.remove();
+
+// Nativ 1
+var sec = document.querySelector("section");
+//sec.innerHTML = "";
+
+// Nativ 2
+console.log(sec.lastChild);
+while(sec.lastChild) {
+    sec.removeChild(sec.lastChild);
+    console.log(sec.lastChild)
+}
+
+// Nativ 3
+sec.parentNode.removeChild(sec);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Proxy</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Proxy</h1>
+
+
+<script src="lib/jquery.js"></script>
+<script>
+    var car = {
+        type: "BMW",
+        clickHandler: function(e) {
+            alert(this.type);
+        }
+    };
+    // jQuery
+    $(window).on("click", $.proxy(car.clickHandler, car));
+    
+    // Nativ
+    window.addEventListener("click", car.clickHandler.bind(car));
+</script>
+</body>
+</html>

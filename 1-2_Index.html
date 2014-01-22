@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Index</h1>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<script src="lib/jquery.js"></script>
+<script>
+    // jQuery
+    $("div").eq(3);
+    $("div").get(3);
+    $("div").[3];
+    
+    // Nativ
+    var elms = document.querySelectorAll("div");
+    elms.item(3);
+    elms[3];
+</script>
+</body>
+</html>

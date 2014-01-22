@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>CSS</h1>
+<div>
+    <p>Text...</p>
+</div>
+<section>
+    <p>Text...</p>
+</section>
+
+<script src="lib/jquery.js"></script>
+<script>
+//jQuery 1
+var div = $("div");
+div.css("color", "orange");
+
+//jQuery2
+div.css({
+    "font-size": "22px",
+    textAlign: "center",
+    background: "silver"
+});
+
+// Nativ 1
+var sec = document.querySelector("section");
+sec.style.color = "gold";
+sec.style["font-size"] = "22px";
+
+// Nativ 2
+var style = function(el, styles) {
+    for (var style in styles) {
+        if (styles.hasOwnProperty(style)){
+            el.style[style] = styles[style];
+        }
+    }
+};
+style(sec, {
+    textAlign: "center",
+    "background-color": "silver"
+});
+</script>
+</body>
+</html>

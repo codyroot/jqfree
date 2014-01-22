@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Width & Height</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Width & Height</h1>
+<div>Inhalt...</div>
+
+<script src="lib/jquery.js"></script>
+<script>
+// jQuery
+var box = $("div");
+box.width(); // Ohne Padding / Border
+box.innerWidth(); // Mit Padding ohne Border
+box.outerWidth(); // Mit Padding / Border
+
+// Nativ
+var b = document.querySelector("div");
+b.clientWidth; // Ohne Padding / Border
+b.offsetWidth; // Mit Padding ohne Border
+b.getBoundingClientRect().width; // Mit Padding / Border
+</script>
+</body>
+</html>

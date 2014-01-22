@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Easing</title>
+    <link rel="stylesheet" href="lib/style.css" />
+    <style>
+        div { background-color: yellow; position: relative; width: 100px; height: 100px; margin-bottom: 15px; }
+    
+    #css3-transition {
+        transition: left 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+    #css3-transition.move { left: 300px; }
+    
+    @keyframes move {
+        from {}
+        to { left: 300px; }
+    }
+    #css3-animation.move-a {
+        animation: move 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s normal forwards;
+    }
+    </style>
+
+</head>
+
+<body>
+    <h1>Easing</h1>
+    <div id="jquery">jQuery</div>
+    <div id="css3-transition">CSS3 Transition</div>
+    <div id="css3-animation">CSS3 Animation</div>
+
+    <script src="lib/jquery.js"></script>
+    <script>
+        $("#jquery").on("click", function() {
+            $(this).animate({
+                left: 300
+            }, 600, "easeInOutQuad");
+        });
+
+        document.getElementById("css3-transition")
+            .addEventListener("click", function() {
+                this.classList.add("move");
+            });
+
+        document.getElementById("css3-animation")
+            .addEventListener("click", function() {
+                this.classList.add("move-a");
+            });
+    </script>
+</body>
+
+</html>

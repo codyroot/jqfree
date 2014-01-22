@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>FadeOut</title>
+    <link rel="stylesheet" href="lib/style.css" />
+    <style>
+        #jquery-block, #css3-block {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background-color: #ccc;
+        margin: 0 0 15px 0;
+        overflow:hidden;
+    }
+    
+    #css3-block {
+        transition: opacity .4s linear;
+    }
+    
+    .fade-block {
+        opacity: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>FadeOut</h1>
+    <div id="jquery-block">jQuery Fade Out</div>
+    <div id="css3-block">CSS3 Fade Out</div>
+    <button>Fade Out</button>
+
+    <script src="lib/jquery.js"></script>
+    <script>
+        //jQuery
+        $("button").click(function() {
+            $("#jquery-block").fadeToggle();
+        });
+
+         //Nativ
+        document.querySelector("button").addEventListener("click", function() {
+            var block = document.getElementById("css3-block");
+            block.classList.toggle("fade-block");
+        });
+    </script>
+</body>
+
+</html>

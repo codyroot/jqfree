@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Delegate</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Delegate</h1>
+
+<section>
+    <h1>Header</h1>
+    <p>Text</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <footer>Footer</footer>
+</section>
+
+<script src="lib/jquery.js"></script>
+<script>
+
+// jQuery
+var sec = $("section"),
+    fn = function(e){alert(e)};
+sec.delegate("p", "click", fn);
+//sec.off() or sec.undelegate();
+
+// Nativ
+var s = document.querySelector("section");
+s.addEventListener("click", fn, false);
+//s.removeEventListener("click", fn, false);
+
+</script>
+</body>
+</html>

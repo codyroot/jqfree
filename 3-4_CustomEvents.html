@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Custom Events</title>
+    <link rel="stylesheet" href="lib/style.css" />
+</head>
+<body>
+<h1>Custom Events</h1>
+<div id="div">Inhalt</div>
+<div id="d">Inhalt</div>
+
+<script src="lib/jquery.js"></script>
+<script>
+    // jQuery
+//    $("#div").on("click", function(e, arg1, arg2){
+//        console.log(e, arg1, arg2);
+//    });
+//    $("#div").trigger("click");
+//    $("#div").trigger("click", ["arg1", "arg2"]);
+
+    // Nativ
+    var evtFn = function (e) {
+        //e.preventDefault();
+        var event = new CustomEvent("meinEvent", {
+            detail: {
+                tagName: e.target.tagName,
+                blubb : "blubb"
+            },
+            bubbles: true,
+            cancelable: true
+        });
+        e.target.dispatchEvent(event);
+    };
+    document.getElementById("d")
+        .addEventListener("click", evtFn, false);
+    document.addEventListener("meinEvent", function(e){
+        console.log(e.detail);
+    }, false);
+</script>
+</body>
+</html>
